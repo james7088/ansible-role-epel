@@ -2,22 +2,22 @@
 dependency:
   name: galaxy
 driver:
-  name: docker
+  name: vagrant
+  provider:
+    name: virtualbox
 lint:
   name: yamllint
 platforms:
-  - name: docker-centos7
-    image: centos:7
-    privileged: true
+  - name: centos7
+    box: centos/7
 provisioner:
   name: ansible
   playbooks:
-      converge: ../playbook.yml
+    converge: ../playbook.yml
   lint:
     name: ansible-lint
-  log: true
 scenario:
-  name: default
+  name: vagrant
 verifier:
   name: testinfra
   directory: ../tests/

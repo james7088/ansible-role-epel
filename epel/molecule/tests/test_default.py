@@ -15,6 +15,7 @@ def ansible_vars(host):
     Ansible variable precedence is respected.
     """
     defaults_files = "file=../../defaults/main.yml"
+    print defaults_files
     vars_files = "file=../../vars/main.yml"
 
     host.ansible("setup")
