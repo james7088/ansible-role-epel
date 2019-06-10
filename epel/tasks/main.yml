@@ -4,10 +4,6 @@
     path: "{{ epel_repofile_path }}"
   register: epel_repofile_result
 
-- name: debug
-  debug:
-    msg: "{{ epel_repo_url }}"
-
 - name: Install EPEL repo.
   yum:
     name: "{{ epel_repo_url }}"

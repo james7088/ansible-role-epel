@@ -39,3 +39,9 @@ def test_epel_repo_file(host, ansible_vars):
 
     assert epel_repo_file.exists
     assert epel_repo_file.user == 'root'
+
+
+def test_epel_gpg_key_file(host, ansible_vars):
+    epel_gpg_file = host.file(ansible_vars['epel_repo_gpg_key_url'])
+
+    assert epel_gpg_file.exists
